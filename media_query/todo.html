@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Todo</title>
+</head>
+
+<body>
+
+<div>
+  <h2>Todo</h2>
+  <input type="text" id="task">
+  <button id="addbtn">Add</button>
+</div>
+
+<ul id="list"></ul>
+
+<script>
+var addbtn = document.getElementById("addbtn");
+
+addbtn.addEventListener("click", function () {
+  var value = document.getElementById("task").value;
+
+  if(value === "") return;
+
+  let li = document.createElement("li");
+  li.textContent = value;
+
+  document.getElementById("list").appendChild(li);
+
+  // delete button
+  let dltbn = document.createElement("button");
+  dltbn.textContent = "Delete";
+
+  li.appendChild(dltbn);
+
+  dltbn.onclick = function () {
+    li.remove();
+  };
+
+  document.getElementById("task").value = "";
+});
+</script>
+
+<div  id="box" class="box" style="width: 200px; height: 200px ; padding: 50px ; background-color: crimson; color:aliceblue">
+  thsi is box
+
+</div>
+<button id="btn">toggle</button>
+<script>
+  var toggle=document.getElementById("btn")
+  toggle.addEventListener("click",function(){
+    let box=document.getElementById("box")
+   box.style.display= box.style.display=="block" ? "none" :"block"
+  })
+</script>
+</body>
+</html>

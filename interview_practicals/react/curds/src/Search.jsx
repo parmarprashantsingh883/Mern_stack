@@ -23,7 +23,7 @@ function Search() {
         placeholder="Search..." 
         style={{width:250, height:50,borderRadius:"10px ", borderStyle:"none",marginBottom:"10px",backgroundColor:"lightgray"}} 
         value={search}
-        onChange={(e=>{setsearch(e.target.value)})}
+        onChange={(e)=>{setsearch(e.target.value)}}
 
 
         

@@ -1,5 +1,11 @@
 {
   "students": [
-    
+    {
+      "id": "22",
+      "name": "Parmar Prashant v singh",
+      "place": "ahm",
+      "phone": "9574028096",
+      "pincode": "382418"
+    }
   ]
 }

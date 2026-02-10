@@ -14,18 +14,14 @@ function StudentAdd() {
 
   const navigate = useNavigate();
 
-  // function handleChange(e) {
-  //   setData({
-  //     ...data,
-  //     [e.target.name]: e.target.value
-  //   });
-  // }
-   
-   function hadlechanges(e){
-    setData({...data,
+  function handleChange(e) {
+    setData({
+      ...data,
       [e.target.name]: e.target.value
-    })
-   }
+    });
+  }
+   
+  
   function handleSubmit(e) {
     e.preventDefault();
 

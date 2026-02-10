@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Layout</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+/* NAVBAR */
+.navbar{
+    display:flex;
+    height:90px;
+    justify-content:space-between;
+    background:#dab0b0;
+    align-items:center;
+    padding:0 40px;
+    gap:20px;
+}
+
+.nav-links{
+    display:flex;
+    gap:20px;
+}
+
+.nav-links a{
+    color:black;
+    text-decoration:none;
+    font-size:20px;
+}
+
+/* LAYOUT */
+.layout{
+    display:flex;
+}
+
+/* SIDEBAR */
+.sidebar{
+    width:200px;
+    background:rgb(115,115,229);
+    min-height:500px;
+    padding:30px;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:30px;
+}
+
+/* BUTTON */
+button{
+    padding:10px 15px;
+    border:2px solid red;
+    background:#d07e7e;
+    border-radius:10px;
+    cursor:pointer;
+}
+
+/* CONTENT */
+.content{
+    flex:1;
+    background:#fcfbfa;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    min-height:500px;
+}
+
+/* FORM */
+.form{
+    display:none;
+    max-width:400px;
+    border:2px solid bisque;
+    padding:20px;
+    border-radius:20px;
+}
+
+form{
+    display:flex;
+    flex-direction:column;
+    gap:15px;
+}
+
+input{
+    width:100%;
+    height:35px;
+    border-radius:10px;
+    padding:5px 10px;
+}
+
+/* FOOTER */
+.footer{
+    background:#d94d4d;
+    padding:20px;
+    display:flex;
+    gap:15px;
+}
+
+.box1{
+    flex:1;
+    background:#c34f4f;
+    padding:40px;
+    color:white;
+    text-align:center;
+}
+
+/* RESPONSIVE */
+@media (max-width:650px){
+
+.navbar{
+    flex-direction:column;
+    align-items:flex-start;
+    height:auto;
+}
+
+.nav-links{
+    flex-direction:column;
+}
+
+.layout{
+    flex-direction:column;
+}
+
+.sidebar{
+    width:100%;
+    flex-direction:row;
+    justify-content:center;
+    min-height:auto;
+}
+
+.footer{
+    flex-wrap:wrap;
+    justify-content:center;
+}
+
+.box1{
+    width:45%;
+    background:white;
+    color:#c34f4f;
+}
+
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<div class="navbar">
+    <h1>My Logo</h1>
+
+    <div class="nav-links">
+        <a href="#">Home</a>
+        <a href="#">About</a>
+        <a href="#">Blog</a>
+        <a href="#">Locations</a>
+    </div>
+</div>
+
+<!-- MAIN LAYOUT -->
+<div class="layout">
+
+    <!-- SIDEBAR -->
+    <div class="sidebar">
+        <button onclick="showLogin()">Login</button>
+        <button onclick="contactForm()">Contact</button>
+    </div>
+
+    <!-- CONTENT -->
+    <div class="content">
+
+        <!-- LOGIN FORM -->
+        <div class="form" id="loginForm">
+            <form>
+                <input type="text" placeholder="Enter Name">
+                <input type="email" placeholder="Enter Email">
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+
+        <!-- CONTACT FORM -->
+        <div class="form" id="contactForm">
+            <form>
+                <input type="text" placeholder="Enter Name">
+                <input type="email" placeholder="Enter Email">
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+
+    </div>
+</div>
+
+<!-- FOOTER -->
+<div class="footer">
+    <div class="box1">Box 1</div>
+    <div class="box1">Box 2</div>
+    <div class="box1">Box 3</div>
+    <div class="box1">Box 4</div>
+</div>
+
+<script>
+function showLogin(){
+     var box=document.getElementById("loginForm")
+    
+     box.style.display=box.style.display=="flex" ? "none" : "flex"
+}
+function contactForm(){
+    
+     var box1=document.getElementById("contactForm")
+     box1.style.display=box1.style.display=="flex" ? "none" : "flex"
+}
+
+
+</script>
+
+</body>
+</html>

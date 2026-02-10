@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        body,html{
+            width: 100%;
+            height: 100%;
+        }
+        .main{
+            width: 100%;
+            height: 100%;
+            position: relative;
+        }
+        .navbar{
+            height: 90px;
+            display: flex;
+            align-items: center;
+            padding: 10px 50px;
+            justify-content: space-between;
+            border: 1px solid gray;
+            
+        }
+        .navlinks{
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+
+        }
+        .navlinks a{
+     color: black;
+     text-decoration: none;
+     text-transform: capitalize;
+     font-weight: 900;
+        }
+        .content{
+            background-color: crimson;
+            height: calc(100% - 90px);
+            display: flex;
+            padding: 0;
+        }
+        .left{
+            width: 20%;
+            height: 100%;
+            background: #8e8d8d;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 30px;
+            padding: 40px 0px;
+        }
+         .right{
+            width: 80%;
+           height: 100%;
+            background: skyblue;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            padding: 20px 20px;
+            gap: 30px;
+        }
+        .footer{
+            height: max-content;
+            background: #7387d7;
+            padding: 10px 10px;
+            display: flex;
+            justify-content: center;
+            width: 100%;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .footer1{
+            height: 80px;
+            width: calc(25% - 30px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid crimson;
+        }
+        button{
+            padding: 1vw  2vw;
+            border-radius: 5px;
+            border: 2px solid crimson;
+            background: white;
+            color: black;
+        }
+        .form{
+        max-width: 400px;
+            border: 2px solid gray;
+            padding: 20px;
+            border-radius: 10px;
+           
+            display: none;
+        }
+        form{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 10px;
+        }
+        .model{
+            display: none;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            border: 2px solid crimson;
+            border-radius: 10px;
+            padding: 30px;
+            background-color: lightseagreen;
+            max-width: 400px;
+
+        }
+        input{
+            width: 100%;
+            border-radius: 5px;
+            height: 32px;
+            padding: 10px;
+            border: none;
+        }
+        h2{
+            color: paleturquoise;
+        }
+
+        #menubtn{
+           display: none;
+            color: black;
+        }
+        .navlinks{
+           
+        }
+       
+        
+        @media (max-width:972px) {
+            .footer1{
+                width: calc(50% - 30px);
+            }
+         }
+        @media (max-width:600px) {
+            .navbar{
+                display: flex;
+                flex-direction: row;
+                align-items: start;
+                height: max-content;
+                background: lightseagreen;
+                color: whitesmoke;
+            }
+            .navlinks{
+                flex-direction: column;
+                display:none ;
+                padding-top: 20px;
+                align-items: center;
+                justify-content: center;
+                
+            }
+            .navlinks a{
+              color: whitesmoke;
+            }
+            .content{
+                flex-direction: column;
+              
+            }
+            .left{
+                width: 100%;
+                height:20%;
+                padding: 20px 20px;
+                flex-direction: row;
+                justify-content: center;
+                flex-wrap: wrap;
+            }
+            .right{
+                width: 100%;
+                  min-height: 80%
+                
+            }
+            .footer{
+                flex-wrap: wrap;
+            }
+            .footer1{
+        width: 100%;
+    }
+     #menubtn{
+         display: block;
+        }
+    }
+         
+    </style>
+</head>
+<body>
+    <div class="main">
+        <div class="navbar">
+            <div class="mylogo"><h1>Logo</h1></div>
+            <div class="navlinks" id="navlinks">
+                <a href="">home</a>
+                 <a href="">about</a>
+                  <a href="">blog</a>
+                   <a href="">Location</a>
+            </div>
+            <button onclick="toggle()" style="text-decoration: none; font-weight: bolder; " id="menubtn"> ☰ </button>
+           
+ 
+
+        </div>
+        <div class="content">
+            <div class="left">
+                <button onclick="change()">Login</button>
+                <button onclick="change2()">contact</button>
+                <button onclick="change3()">model</button>
+            </div>
+            <div class="right">
+               <div class="form" id="form">
+                 
+                <form onsubmit="validate(event)">
+
+                   <h2>Login</h2>
+                    <input type="text"placeholder="enter fname"     id="fname">
+                   
+                     <input type="text"placeholder="enter lname"      id="lname">
+                      <input type="email"placeholder="enter email"     id="email">
+                      <span id="error"></span >
+                      <button>submit</button>
+                </form>
+               </div>
+                <div class="form   " id="contact">
+                <form onsubmit="validate(event)">
+                    <h2>Contect us</h2>
+                    <input type="text"placeholder="enter name" id="fname">
+                     <input type="text"placeholder="enter name" id="lname">
+                      <input type="email"placeholder="enter email" id="email">
+                    <span id="error"></span >
+                      <button >submit</button>
+                       
+                </form>
+               </div>
+               <div class="model   " id="model">
+                
+                    <h2>model </h2>
+                  <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Obcaecati, hic.
+
+                  </p>
+               
+               </div>
+            </div>
+
+        </div>
+        <div class="footer">
+        <div class="footer1">
+            <h4>footer1</h4>
+        </div>
+         <div class="footer1">
+            <h4>footer1</h4>
+        </div>
+         <div class="footer1">
+            <h4>footer1</h4>
+        </div>
+         <div class="footer1">
+            <h4>footer1</h4>
+        </div>
+        </div>
+    </div>
+    <script>
+        function change(){
+            var form=document.getElementById("form")
+            form.style.display=form.style.display==="flex" ? "none" : "flex"
+        }
+         function change2(){
+            var contact=document.getElementById("contact")
+            contact.style.display=contact.style.display==="flex" ? "none" : "flex"
+        }
+         function change3() {
+    var model = document.getElementById("model");
+
+    model.style.display =
+        model.style.display === "flex" ? "none" : "flex";
+
+    var body = document.querySelector("left");
+    left.style.filter = "blur(5px)";
+}
+
+        function toggle(){
+            var btn=document.getElementById("menuBtn");
+            var menu=document.getElementById("navlinks")
+           
+                 menu.style.display= menu.style.display=="flex" ? "none" : "flex"
+        }
+
+    </script>
+    <script src="script.js"></script>
+    
+</body>
+</html>

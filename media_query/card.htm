@@ -1,92 +1,68 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>Responsive Cards</title>
-
-<style>
-
-/* container */
-.cards{
-  display:flex;
-  flex-wrap:wrap;
-  padding: 0;
-}
-body{
-    margin: 0px;
-    padding: 0px;
-}
-
-/* card */
-.card{
-  width:25%;
-  padding:10px;
-}
-
-.card-box{
-  border:1px solid #ccc;
-  padding:20px;
-  text-align:center;
-}
-
-/* image responsive */
-.card img{
-  width:100%;
-}
-
-/* ===== Tablet ===== */
-@media(max-width:768px){
-  .card{
-    width:50%;
-  }
-}
-
-/* ===== Mobile ===== */
-@media(max-width:480px){
-  .card{
-    width:100%;
-  }
-}
-
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=
+  , initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    *{
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    html,body{
+      width: 100%;
+      height: 100%;
+    }
+    .main{
+      width: 100%;
+      height: 100%;
+      position: relative;
+    }
+    .navbar{
+      height: 90px;
+      width: 100%;
+      background: #b85f5f;
+    }
+    .content{
+      height: calc(100% - 90px);
+      background: crimson;
+      width: 100%;
+      display: flex;
+    }
+    .left{
+      width: 20%;
+      height: 100%;
+      background: skyblue;
+    }
+    .footer{
+      height: 90px;
+      width: 100%;
+      padding: 20px;
+      background: greenyellow;
+    }
+  </style>
 </head>
-
 <body>
-
-<div class="cards">
-
-  <div class="card">
-    <div class="card-box">
-      <img src="https://picsum.photos/300">
-      <h3>Product 1</h3>
-      <p>$100</p>
-    </div>
+  <div class="main">
+  <div class="navbar">
+    navbar
   </div>
-
-  <div class="card">
-    <div class="card-box">
-      <img src="https://picsum.photos/301">
-      <h3>Product 2</h3>
-      <p>$100</p>
-    </div>
+  <div class="content">
+  <div class="left">
+    hii
   </div>
-
-  <div class="card">
-    <div class="card-box">
-      <img src="https://picsum.photos/302">
-      <h3>Product 3</h3>
-      <p>$100</p>
-    </div>
+  <div class="right">
+    hhh
   </div>
-
-  <div class="card">
-    <div class="card-box">
-      <img src="https://picsum.photos/303">
-      <h3>Product 4</h3>
-      <p>$100</p>
-    </div>
   </div>
-
-</div>
-
+  <div class="footer">
+    footer
+  </div>
+  </div>
+  
+    
+  </div>
 </body>
 </html>
