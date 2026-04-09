@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container {
+            display: flex;
+            border: 2px solid crimson;
+            flex-direction: column;
+            padding: 30px;
+            flex-wrap: wrap;
+            max-width: 50%;
+            max-height: max-content;
+            margin: 0 auto;
+            border-radius: 10px;
+
+        }
+strong{
+    font-size: medium;
+    padding: 5x;
+
+    
+}
+        h1 {
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            font-weight: bolder;
+            text-align: center;
+            color: crimson;
+
+
+        }
+
+        .cards {
+            display: flex;
+            gap: 20px;
+            margin: 10px;
+        }
+
+        .card {
+            width: 130px;
+            height: 50px;
+            border: 2px solid grey;
+            border-radius: 5px;
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            align-items: center;
+            background-color: crimson;
+            color: whitesmoke;
+            font-size: 17px;
+            font-weight: bolder;
+        }
+
+      
+
+        a {
+            text-decoration: none;
+            width: max-content;
+            height: max-content;
+            border: 2px solid crimson;
+            padding: 10px;
+            border-radius: 10px;
+            margin: 0 auto;
+            background-color: gainsboro;
+            color: black;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Employee Details</h1>
+    <div class="container">
+        <div class="cards" id="cards"></div>
+
+    </div>
+
+
+
+
+    <script src="users.js"></script>
+
+   <script>
+    const data = JSON.parse(localStorage.getItem("selectedUser"));
+    const container = document.querySelector(".container");
+
+    if (data) {
+
+        // generate skills cards properly
+        const skillsHTML = data.skills
+            .map(skill => `<div class="card"> ${skill.name}</div>`)
+            .join("");
+
+        container.innerHTML = `
+            <strong>Id: ${data.id}</strong><br>
+            <strong>Fname: ${data.first_name}</strong><br>
+            <strong>Lname: ${data.last_name}</strong><br>
+            <strong>Gender: ${data.gender}</strong><br>
+            <strong>Dob: ${data.dob}</strong><br>
+            <strong>Nationality: ${data.nationality}</strong><br>
+            <strong>Job Title: ${data.employment.job_title}</strong><br>
+            <strong>Company: ${data.employment.company}</strong><br>
+            <strong>Years Of Experience: ${data.employment.years_of_experience}</strong><br>
+            <strong>Avg Skill Score: ${data.average_skill_score}</strong><br>
+            <strong>Created At: ${data.created_at}</strong>
+
+            <h3>Skills</h3>
+            <div class="cards">
+                ${skillsHTML}
+            </div>
+        `;
+    }
+</script>
+                
+
+                    
+
+
+
+               
+ 
+       
+    </script>
+
+
+
+</body>
+
+</html>

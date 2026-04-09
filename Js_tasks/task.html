@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        .container{
+            padding:35px;
+    
+        }
+        table{
+            border-collapse: collapse;
+            padding: 10px;
+        border: 2px solid crimson;
+        }
+        th{
+            padding: 5px;
+            border: 2px solid gray;
+        }
+        tr{
+            padding: 5px;
+            text-align: center;
+             
+        }
+        td{
+            padding: 10px;
+        }
+        a{
+            text-decoration: none;
+            color: cornsilk;
+            padding: 5px;
+            font-size: 15px;
+            &:hover{
+                color: crimson;
+            }
+        }
+        button{
+            background-color: crimson;
+            padding: 5px;
+            border: none;
+            border-radius: 5px;
+            &:hover{
+                background:whitesmoke;
+                border: 1px solid crimson;
+                
+            }
+            
+
+        }
+        h1{
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            font-weight: bolder;
+            text-align: center;
+            color: crimson  ;
+            
+                   
+        }
+    </style>
+    <script>
+   
+   const user=   [
+  {
+    "id": "1001",
+    "first_name": "Aarav",
+    "last_name": "Sharma",
+    "gender": "Male",
+    "dob": "1995-08-17",
+    "nationality": "Indian",
+    "employment": {
+      "job_title": "Senior Software Engineer",
+      "company": "TechNova Solutions",
+      "years_of_experience": 8
+    },
+    "skills": [
+      {"name": "JavaScript", "score": 9},
+      {"name": "Python", "score": 8},
+      {"name": "Node.js", "score": 8},
+      {"name": "React", "score": 9},
+      {"name": "SQL", "score": 7}
+    ],
+    "skills_count": 5,
+    "average_skill_score": 8.2,
+    "created_at": "2026-02-25T10:30:00Z"
+  },
+  {
+    "id": "1002",
+    "first_name": "Priya",
+    "last_name": "Verma",
+    "gender": "Female",
+    "dob": "1998-03-22",
+    "nationality": "Indian",
+    "employment": {
+      "job_title": "Data Analyst",
+      "company": "Insight Analytics",
+      "years_of_experience": 5
+    },
+    "skills": [
+      {"name": "Python", "score": 9},
+      {"name": "SQL", "score": 9},
+      {"name": "Power BI", "score": 8},
+      {"name": "Excel", "score": 9},
+      {"name": "Statistics", "score": 8}
+    ],
+    "skills_count": 5,
+    "average_skill_score": 8.6,
+    "created_at": "2026-02-25T10:35:00Z"
+  },
+  {
+    "id": "1003",
+    "first_name": "Rahul",
+    "last_name": "Mehta",
+    "gender": "Male",
+    "dob": "1993-11-05",
+    "nationality": "Indian",
+    "employment": {
+      "job_title": "DevOps Engineer",
+      "company": "CloudSphere Technologies",
+      "years_of_experience": 9
+    },
+    "skills": [
+      {"name": "AWS", "score": 9},
+      {"name": "Docker", "score": 8},
+      {"name": "Kubernetes", "score": 8},
+      {"name": "Linux", "score": 9},
+      {"name": "Terraform", "score": 7}
+    ],
+    "skills_count": 5,
+    "average_skill_score": 8.2,
+    "created_at": "2026-02-25T10:40:00Z"
+  },
+  {
+    "id": "1004",
+    "first_name": "Sneha",
+    "last_name": "Iyer",
+    "gender": "Female",
+    "dob": "1997-06-14",
+    "nationality": "Indian",
+    "employment": {
+      "job_title": "UI/UX Designer",
+      "company": "Creative Minds Studio",
+      "years_of_experience": 6
+    },
+    "skills": [
+      {"name": "Figma", "score": 9},
+      {"name": "Adobe XD", "score": 8},
+      {"name": "HTML", "score": 7},
+      {"name": "CSS", "score": 8},
+      {"name": "User Research", "score": 9}
+    ],
+    "skills_count": 5,
+    "average_skill_score": 8.2,
+    "created_at": "2026-02-25T10:45:00Z"
+  }
+]
+    </script>
+
+<div class="container">
+    <h1>Employee Data</h1>
+<table border="2">
+<thead>
+    <tr>
+        <th>id</th>
+         <th>Fname</th>
+         <th>Lname</th>
+         <th>gender</th>
+         <th>dob</th>
+         <th>nationality</th>
+         <th>job_title</th>
+         <th>company</th>
+         <th>y_of_e</th>
+         <th>skills</th>
+         <th>Avg_skill_score</th>
+         <th>created_at</th>
+         <th width="150px">Actions</th>
+
+    </tr>
+</thead>
+<tbody id="data">
+   
+</tbody>
+</table>
+</div>
+
+<script>
+    const data=user.map((val,index)=>{
+        return`
+        <tr >
+        <td>${val.id}</td>
+        <td>${val.first_name}</td>
+        <td>${val.last_name}</td>
+        <td>${val.gender}</td>
+        <td>${val.dob}</td>
+        <td>${val.nationality}</td>
+        <td>${val.employment.job_title}</td>
+        <td>${val.employment.company}</td>
+        <td>${val.employment.years_of_experience}</td>
+        
+        <td>${val.skills.map((val)=>(
+            val.name
+        ))}
+           
+            
+              <td>${val.average_skill_score}</td>
+               <td>${val.created_at}</td>
+        
+        <td><button type="button"  onclick="callme(${val.id})">View</button></td>
+     
+    </tr>
+        `
+    }).join("")
+    const mydata=document.getElementById("data")
+    mydata.innerHTML=data;
+function handelclick(id){
+ console.log(id);
+ 
+
+}
+
+// function callme(id){
+//  const result = user.filter((items )=>items.id == id)
+//      console.log(result)  
+    
+// }
+
+    
+</script>
+
+<script src="users.js"></script>
+
+
+</body>
+</html>

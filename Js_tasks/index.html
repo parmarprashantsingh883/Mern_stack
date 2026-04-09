@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Map Practice</title>
+  <style>
+    .card {
+      border: 1px solid #ccc;
+      padding: 10px;
+      margin: 10px;
+      width: 200px;
+      display: flex;
+      justify-self: center;
+      flex-direction: column;
+      align-items: center;
+      border-radius: 10px;
+            border: 2px crimson solid;
+    }
+    .container {
+      display: flex;
+      gap: 20px;
+
+    }
+  </style>
+</head>
+<body>
+
+  <div  id="box" class="container">
+    
+   
+  </div>
+
+  <script>
+    const users = [
+      { id: 1, name: "Prashant", age: 22, city: "Mumbai" },
+      { id: 2, name: "Rahul", age: 25, city: "Delhi" },
+      { id: 3, name: "aayushii",  city: "Pune" }
+    ];
+
+    const cards=users.map((val,index)=>{
+        return `
+      <div class="card">
+      <h4>${val.name}</h4>
+      <h4>${val.city}</h4>
+       <h4>${val?.age ? val.age :"NO age"}</h4>
+    </div>` 
+   })
+
+    let box=document.getElementById("box")
+    box.innerHTML+=cards.join("");
+  </script>
+
+</body>
+</html>
